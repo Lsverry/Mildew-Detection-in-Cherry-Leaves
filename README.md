@@ -1,47 +1,3 @@
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-## Template Instructions
-
-Welcome,
-
-This is the Code Institute student template for the Cherry Leaves project option in Predictive Analytics. We have preinstalled all of the tools you need to get started. It's perfectly okay to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
-
-You can safely delete the Template Instructions section of this README.md file and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
-
-## How to use this repo
-
-1. Use this template to create your GitHub project repo
-
-1. Log into your cloud IDE with your GitHub account.
-
-1. On your Dashboard, click on the New Workspace button
-
-1. Paste in the URL you copied from GitHub earlier
-
-1. Click Create
-
-1. Wait for the workspace to open. This can take a few minutes.
-
-1. Open a new terminal and `pip3 install -r requirements.txt`
-
-1. Open the jupyter_notebooks directory, and click on the notebook you want to open.
-
-1. Click the kernel button and choose Python Environments.
-
-Note that the kernel says Python 3.8.18 as it inherits from the workspace, so it will be Python-3.8.18 as installed by our template. To confirm this, you can use `! python --version` in a notebook code cell.
-
-## Cloud IDE Reminders
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, then you can create a new one with _Regenerate API Key_.
-
 ## Dataset Content
 
 - The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
@@ -57,21 +13,51 @@ To save time in this process, the IT team suggested an ML system that detects in
 - 2 - The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
 
 ## Hypothesis and how to validate?
-
-- List here your project hypothesis(es) and how you envision validating it (them).
+* Hypothesis: A healthy cherry leaf and one infected with powdery mildew can be visually differentiated based on texture, color, and other visual characteristics.
+* Validation: Conduct an image analysis study, comparing the average and variability images of healthy and infected leaves.
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
-
-- List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
+**Business Requirement 1**: Data Visualization 
+   * Display average and variability images for both healthy and infected cherry leaves.
+   * Visualize the difference between the average healthy leaf and the average infected leaf.
+   * Display an image montage for both healthy and infected leaves.
+   
+**Business Requirement 2**: Classification
+   * Develop a binary classifier to predict whether a cherry leaf is healthy or infected with powdery mildew.
+   * Generate classification reports with performance metrics.
 
 ## ML Business Case
-
-- In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
+* The goal is to build an ML model capable of predicting whether a cherry leaf is healthy or infected with powdery mildew, using historical image data.
+* The model should provide a reliable and faster alternative to manual inspection.
+* Success metrics:
+   * The model must achieve an accuracy of at least 97% on the test set.
+* Model output:
+   * A binary classification (healthy or infected) along with the probability score.
 
 ## Dashboard Design
+### Page 1: Project Summary
+* The client and project description, including the business requirements.
+* Dataset overview: Number of images, classes (healthy and infected), and image dimensions (256x256 pixels).
 
-- List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items, that your dashboard library supports.
-- Finally, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project, you were confident you would use a given plot to display an insight, but later, you chose another plot type).
+### Page 2: Visual Study of Cherry Leaves
+* This page addresses Business Requirement 1.
+* Checkbox 1: Show average and variability images for both healthy and infected leaves.
+* Checkbox 2: Display the differences between the average healthy leaf and the average infected leaf.
+* Checkbox 3: Image montage for visual comparison.
+
+### Page 3: Mildew Detector
+* This page addresses Business Requirement 2.
+* Link to download cherry leaf images for live prediction.
+* A file uploader widget where users can upload multiple cherry leaf images. The system will display each image and predict whether the leaf is healthy or infected, along with the probability score.
+* A table summarizing the image names and prediction results, with a download option.
+
+### Page 4: Hypothesis and Validation
+* Block for each project hypothesis, detailing conclusions and how the hypothesis was validated.
+
+### Page 5: Model Performance Metrics
+* Label frequencies for the train, validation, and test sets.
+* Model training history: Accuracy and loss plots.
+* Evaluation metrics: Confusion matrix, classification report, and final model accuracy.
 
 ## Unfixed Bugs
 
@@ -97,9 +83,7 @@ To save time in this process, the IT team suggested an ML system that detects in
 - Here, you should list the libraries used in the project and provide an example(s) of how you used these libraries.
 
 ## Credits
-
-- In this section, you need to reference where you got your content, media and from where you got extra help. It is common practice to use code from other repositories and tutorials. However, it is necessary to be very specific about these sources to avoid plagiarism.
-- You can break the credits section up into Content and Media, depending on what you have included in your project.
+* **"Malaria Detector"** project for inspiration in structuring and developing this project.
 
 ### Content
 
