@@ -19,7 +19,7 @@ def page_summary_body():
     )
 
     st.write(
-        f"For additional information, please refer to the **README** in the project repository."
+        f"For additional information, please refer to the [**README**](https://github.com/Lsverry/Mildew-Detection-in-Cherry-Leaves/tree/main) in the project repository."
     )
 
     st.success(
