@@ -37,7 +37,7 @@ To save time in this process, the IT team suggested an ML system that detects in
 ## Dashboard Design
 ### Page 1: Project Summary
 * The client and project description, including the business requirements.
-* Dataset overview: Number of images, classes (healthy and infected), and image dimensions (256x256 pixels).
+* Dataset overview: Number of images, classes (healthy and infected), and image dimensions (100x100 pixels).
 
 ### Page 2: Visual Study of Cherry Leaves
 * This page addresses Business Requirement 1.
@@ -55,9 +55,9 @@ To save time in this process, the IT team suggested an ML system that detects in
 * Block for each project hypothesis, detailing conclusions and how the hypothesis was validated.
 
 ### Page 5: Model Performance Metrics
-* Label frequencies for the train, validation, and test sets.
-* Model training history: Accuracy and loss plots.
-* Evaluation metrics: Confusion matrix, classification report, and final model accuracy.
+* Label frequencies: We visualized the distribution of healthy and infected leaves in the training, validation, and test sets.
+* Training history: Accuracy and loss curves for both the training and validation sets were plotted to monitor the model's performance and ensure there was no overfitting.
+* Test set evaluation: The final model achieved an impressive accuracy of 99.76% on the test set, with a very low loss of 0.00435.
 
 ## Unfixed Bugs
 
@@ -80,22 +80,20 @@ To save time in this process, the IT team suggested an ML system that detects in
 
 ## Main Data Analysis and Machine Learning Libraries
 
-- Here, you should list the libraries used in the project and provide an example(s) of how you used these libraries.
+- os          Interacting with the operating system and file paths
+- shutil      High-level file operations like copying and moving files
+- random      Random selections and shuffling for randomization processes
+- zipfile     Extracting and working with ZIP files
+- numpy       Efficient numerical operations and handling arrays
+- pandas      Data manipulation and analysis, especially for working with dataframes
+- matplotlib  Plotting and visualizing data with charts and graphs
+- seaborn     Enhancing Matplotlib plots with better visualizations
+- joblib      Saving and loading machine learning models and other objects
+- imageio     Reading and processing image files for analysis
+- tensorflow  Building, training, and running neural networks
+- keras       High-level API to build and train machine learning models (part of TensorFlow)
+- itertools   Efficient looping and creating iterators for combinations
+- PIL (Pillow) Image processing library for opening and manipulating image files
 
 ## Credits
-* **"Malaria Detector"** project for inspiration in structuring and developing this project.
-
-### Content
-
-- The text for the Home page was taken from Wikipedia Article A.
-- Instructions on how to implement form validation on the Sign-Up page were taken from [Specific YouTube Tutorial](https://www.youtube.com/).
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/).
-
-### Media
-
-- The photos used on the home and sign-up page are from This Open-Source site.
-- The images used for the gallery page were taken from this other open-source site.
-
-## Acknowledgements (optional)
-
-- Thank the people who provided support throughout this project.
+- **"Malaria Detector"** project: This project served as a foundational inspiration not only for structuring and developing our project but also for guiding several key aspects of the implementation. We adapted multiple blocks of code from the "Malaria Detector" notebooks, particularly in areas like data preprocessing, model training, and evaluation. Due to time constraints and workload, the dashboard interface closely mirrors that of the "Malaria Detector" as well, with slight modifications made to fit the requirements of this project.
