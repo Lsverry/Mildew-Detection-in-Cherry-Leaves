@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 import numpy as np
 import pandas as pd
-from keras.models import load_model  
+from keras.models import load_model
 from keras.preprocessing import image
 from src.data_management import export_results_as_csv
 
@@ -12,7 +12,7 @@ def page_mildew_detector_body():
     and get a prediction on whether the leaf is healthy or infected with powdery mildew.
     """
     st.write("### Upload a Cherry Leaf Image to Detect Mildew")
-    
+
     # Inform the user about the dataset and provide download link
     st.info(
         """
@@ -20,7 +20,7 @@ def page_mildew_detector_body():
         - You can download a set of healthy and infected cherry leaves for live prediction. Download the images from [here](https://www.kaggle.com/codeinstitute/cherry-leaves/download).
         """
     )
-    
+
     # File uploader for the image
     uploaded_file = st.file_uploader("Choose a cherry leaf image...", type="jpg")
 

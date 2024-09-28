@@ -61,7 +61,18 @@ To save time in this process, the IT team suggested an ML system that detects in
 
 ## Unfixed Bugs
 
-- You will need to mention unfixed bugs and why they were unfixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable for consideration, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
+- No significant errors were found.
+
+## Code Quality Check
+
+We have analyzed the entire project using **Pylint** to ensure that it complies with Python's PEP8 standards. The Pylint analysis did not report any critical errors or warnings, ensuring that the code follows best practices in terms of structure and formatting.
+
+### Pylint Results:
+- No significant issues were found during the analysis.
+- Only minor warnings related to long lines of code were detected, which do not affect the functionality or readability of the project.
+
+The code is clean, follows the PEP8 guidelines, and is well-structured to ensure maintainability and readability for future developments.
+
 
 ## Deployment
 
@@ -80,20 +91,21 @@ To save time in this process, the IT team suggested an ML system that detects in
 
 ## Main Data Analysis and Machine Learning Libraries
 
-- os          Interacting with the operating system and file paths
-- shutil      High-level file operations like copying and moving files
-- random      Random selections and shuffling for randomization processes
-- zipfile     Extracting and working with ZIP files
-- numpy       Efficient numerical operations and handling arrays
-- pandas      Data manipulation and analysis, especially for working with dataframes
-- matplotlib  Plotting and visualizing data with charts and graphs
-- seaborn     Enhancing Matplotlib plots with better visualizations
-- joblib      Saving and loading machine learning models and other objects
-- imageio     Reading and processing image files for analysis
-- tensorflow  Building, training, and running neural networks
-- keras       High-level API to build and train machine learning models (part of TensorFlow)
-- itertools   Efficient looping and creating iterators for combinations
-- PIL (Pillow) Image processing library for opening and manipulating image files
+- os: Interacting with the operating system and file paths
+- shutil: High-level file operations like copying and moving files
+- random: Random selections and shuffling for randomization processes
+- zipfile: Extracting and working with ZIP files
+- numpy: Efficient numerical operations and handling arrays
+- pandas: Data manipulation and analysis, especially for working with dataframes
+- matplotlib: Plotting and visualizing data with charts and graphs
+- seaborn: Enhancing Matplotlib plots with better visualizations
+- joblib: Saving and loading machine learning models and other objects
+- imageio: Reading and processing image files for analysis
+- tensorflow: Building, training, and running neural networks
+- keras: High-level API to build and train machine learning models (part of TensorFlow)
+- itertools: Efficient looping and creating iterators for combinations
+- PIL (Pillow): Image processing library for opening and manipulating image files
 
 ## Credits
-- **"Malaria Detector"** project: This project served as a foundational inspiration not only for structuring and developing our project but also for guiding several key aspects of the implementation. We adapted multiple blocks of code from the "Malaria Detector" notebooks, particularly in areas like data preprocessing, model training, and evaluation. Due to time constraints and workload, the dashboard interface closely mirrors that of the "Malaria Detector" as well, with slight modifications made to fit the requirements of this project.
+- [**Malaria Detector**](https://github.com/Code-Institute-Org/WalkthroughProject01): This project served as a foundational inspiration not only to structure and develop our project, but also to guide several key aspects of the implementation. We adapted and reused several blocks of code from the malaria detector project to meet project deadlines and ensure the successful delivery of the application.
+

@@ -1,5 +1,4 @@
 import streamlit as st
-import matplotlib.pyplot as plt
 import pandas as pd
 from matplotlib.image import imread
 from src.machine_learning.evaluate import load_mildew_test_evaluation
@@ -22,17 +21,17 @@ def page_ml_performance_metrics():
     # Display the training history of the model (accuracy and loss)
     st.write("### Model Training History")
     col1, col2 = st.beta_columns(2)
-    
+
     # Model accuracy plot
     with col1:
-        model_acc = imread(f"outputs/training_plots/training_vs_validation_accuracy.png")
+        model_acc = imread("outputs/training_plots/training_vs_validation_accuracy.png")
         st.image(model_acc, caption='Model Training Accuracy')
-    
+
     # Model loss plot
     with col2:
-        model_loss = imread(f"outputs/training_plots/training_vs_validation_loss.png")
+        model_loss = imread("outputs/training_plots/training_vs_validation_loss.png")
         st.image(model_loss, caption='Model Training Losses')
-    
+
     st.write("---")
 
     # Display the generalized performance on the test set

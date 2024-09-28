@@ -1,4 +1,3 @@
-import streamlit as st
 from app_pages.multipage import MultiPage  # Import the MultiPage class
 
 # Import your page scripts
