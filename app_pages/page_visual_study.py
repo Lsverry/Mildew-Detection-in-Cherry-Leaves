@@ -32,8 +32,11 @@ def page_visual_study_body():
 
     # Information for the user
     st.info(
-        f"**Objective**: This section allows you to visually differentiate between healthy cherry leaves and those infected with powdery mildew.\n"
-        f"**Dataset Overview**: We will display pre-generated images from the dataset showcasing examples of healthy leaves and those infected by powdery mildew."
+        "**Objective**: This section allows you to visually differentiate between healthy cherry leaves "
+        "and those infected with powdery mildew.\n\n"
+        "**Dataset Overview**: Pre-generated images for both healthy and infected leaves will be displayed.\n"
+        "Additionally, dynamically generated montages based on user selection (healthy or infected) "
+        "can be created."
     )
 
     # Checkbox for showing images (Average and Variability) for healthy and infected categories
