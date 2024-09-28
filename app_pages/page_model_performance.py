@@ -11,22 +11,30 @@ def page_ml_performance_metrics():
     - Model training history (accuracy and loss).
     - Generalized performance on the test set.
     """
-    version = 'v1'
+    version = 'v1'  # Version of the model and outputs
 
+    # Display the distribution of labels in the train, validation, and test sets
     st.write("### Train, Validation, and Test Set: Labels Frequencies")
-    labels_distribution = plt.imread(f"outputs/{version}/image_distribution.png")
+    labels_distribution = imread(f"outputs/{version}/image_distribution.png")
     st.image(labels_distribution, caption='Labels Distribution on Train, Validation, and Test Sets')
     st.write("---")
 
+    # Display the training history of the model (accuracy and loss)
     st.write("### Model Training History")
     col1, col2 = st.beta_columns(2)
+    
+    # Model accuracy plot
     with col1:
-        model_acc = plt.imread(f"outputs/training_plots/training_vs_validation_accuracy.png")
+        model_acc = imread(f"outputs/training_plots/training_vs_validation_accuracy.png")
         st.image(model_acc, caption='Model Training Accuracy')
+    
+    # Model loss plot
     with col2:
-        model_loss = plt.imread(f"outputs/training_plots/training_vs_validation_loss.png")
+        model_loss = imread(f"outputs/training_plots/training_vs_validation_loss.png")
         st.image(model_loss, caption='Model Training Losses')
+    
     st.write("---")
 
-    st.write("### Generalised Performance on Test Set")
+    # Display the generalized performance on the test set
+    st.write("### Generalized Performance on Test Set")
     st.dataframe(pd.DataFrame(load_mildew_test_evaluation(version), index=['Loss', 'Accuracy']))

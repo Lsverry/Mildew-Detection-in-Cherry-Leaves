@@ -7,6 +7,17 @@ from PIL import Image
 import numpy as np
 
 def create_image_montage(image_dir, montage_size=(5, 5), image_size=(100, 100)):
+    """
+    Creates a montage of images from a given directory.
+
+    Args:
+    image_dir (str): Directory containing the images.
+    montage_size (tuple): Number of rows and columns in the montage (default is (5, 5)).
+    image_size (tuple): Size to which each image should be resized (default is (100, 100)).
+
+    Returns:
+    numpy.ndarray: Array representing the montage of images.
+    """
     image_paths = [os.path.join(image_dir, img) for img in os.listdir(image_dir)]
     selected_images = random.sample(image_paths, montage_size[0] * montage_size[1])
     
@@ -28,6 +39,10 @@ def create_image_montage(image_dir, montage_size=(5, 5), image_size=(100, 100)):
     return montage
 
 def page_visual_study_body():
+    """
+    Displays a visual study of cherry leaves in the Streamlit app, allowing users
+    to differentiate between healthy and infected leaves and dynamically generate montages.
+    """
     st.write("### Visual Study of Cherry Leaves")
 
     # Information for the user
@@ -64,7 +79,6 @@ def page_visual_study_body():
             infected_img = imread(infected_image_path)
             st.image(infected_img, caption="Powdery Mildew Leaf - Average and Variability", use_column_width=True)
 
-
     # Checkbox for showing differences between average healthy and infected leaves
     if st.checkbox("Differences between average healthy and infected leaves"):
         st.write("### Displaying the difference between average healthy and powdery mildew leaves")
@@ -81,7 +95,6 @@ def page_visual_study_body():
         if os.path.exists(diff_image_path):
             diff_img = imread(diff_image_path)
             st.image(diff_img, caption="Difference Image", use_column_width=True)
-
 
     # Checkbox for creating an image montage
     if st.checkbox("Image Montage"):

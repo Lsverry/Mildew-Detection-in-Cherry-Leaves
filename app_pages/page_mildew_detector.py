@@ -4,10 +4,13 @@ import numpy as np
 import pandas as pd
 from keras.models import load_model  
 from keras.preprocessing import image
-import os
-from src.data_management import export_results_as_csv  
+from src.data_management import export_results_as_csv
 
 def page_mildew_detector_body():
+    """
+    Function to handle the mildew detection page where users can upload an image 
+    and get a prediction on whether the leaf is healthy or infected with powdery mildew.
+    """
     st.write("### Upload a Cherry Leaf Image to Detect Mildew")
     
     # Inform the user about the dataset and provide download link
