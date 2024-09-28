@@ -1,4 +1,3 @@
-import streamlit as st
 from src.data_management import load_model_or_data
 
 def load_mildew_test_evaluation(version):

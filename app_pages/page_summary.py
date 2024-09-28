@@ -1,5 +1,4 @@
 import streamlit as st
-import matplotlib.pyplot as plt
 
 def page_summary_body():
     """
@@ -26,7 +25,7 @@ def page_summary_body():
 
     # Link to the project's README
     st.write(
-        f"For additional information, please refer to the [**README**](https://github.com/Lsverry/Mildew-Detection-in-Cherry-Leaves/tree/main) in the project repository."
+        "For additional information, please refer to the [**README**](https://github.com/Lsverry/Mildew-Detection-in-Cherry-Leaves/tree/main) in the project repository."
     )
 
     # Display the project objectives
