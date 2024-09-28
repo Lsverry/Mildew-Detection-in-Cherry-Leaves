@@ -23,15 +23,3 @@ def export_results_as_csv(df):
         f'target="_blank">Download Mildew Detection Report</a>'
     )
     return href
-
-def load_model_or_data(file_path):
-    """
-    Load a .pkl file (model or data) from the specified file path.
-    
-    Args:
-    file_path (str): Path to the pickle (.pkl) file.
-    
-    Returns:
-    Object: Loaded model or data.
-    """
-    return joblib.load(filename=file_path)
