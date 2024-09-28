@@ -1,9 +1,11 @@
 import streamlit as st
 from PIL import Image
 import numpy as np
-from keras.models import load_model
+import pandas as pd
+from keras.models import load_model  
 from keras.preprocessing import image
 import os
+from src.data_management import export_results_as_csv  
 
 def page_mildew_detector_body():
     st.write("### Upload a Cherry Leaf Image to Detect Mildew")
@@ -19,9 +21,9 @@ def page_mildew_detector_body():
     # File uploader for the image
     uploaded_file = st.file_uploader("Choose a cherry leaf image...", type="jpg")
 
-    # Load model
+    # Load model using the correct function for HDF5
     version = 'v1'
-    model = load_model(f'outputs/{version}/mildew_model_v1.h5')
+    model = load_model(f'outputs/{version}/mildew_model_v1.h5')  # Using .h5 format
 
     if uploaded_file is not None:
         # Display the uploaded image
@@ -42,3 +44,12 @@ def page_mildew_detector_body():
         st.write(f"#### Prediction: {pred_class}")
         st.write(f"#### Probability: {pred_proba:.2f}")
 
+        # Create a DataFrame to hold the results
+        results_df = pd.DataFrame({
+            'Image': ['Uploaded Cherry Leaf'],
+            'Prediction': [pred_class],
+            'Probability': [pred_proba]
+        })
+
+        # Provide a download link for the results
+        st.markdown(export_results_as_csv(results_df), unsafe_allow_html=True)
