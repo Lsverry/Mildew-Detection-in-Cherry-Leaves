@@ -105,7 +105,7 @@ def page_visual_study_body():
         selected_label = st.selectbox("Select label", label_options)
 
         if st.button("Create Montage"):
-            image_dir = f'inputs/cherry-leaves/train/{selected_label}'
+            image_dir = f'inputs/cherry-leaves/validation/{selected_label}'
             montage = create_image_montage(image_dir)
 
             # Display the generated montage using matplotlib
