@@ -20,7 +20,8 @@ def page_ml_performance_metrics():
 
     # Display the training history of the model (accuracy and loss)
     st.write("### Model Training History")
-    col1, col2 = st.beta_columns(2)
+    col1, col2 = st.columns(2)
+
 
     # Model accuracy plot
     with col1:
