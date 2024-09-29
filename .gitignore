@@ -12,3 +12,4 @@ bfg.jar
 bjects -vH
 inputs/cherry-leaves/train/
 inputs/cherry-leaves/test/
+outputs/v1/mildew_model_v1.h5
