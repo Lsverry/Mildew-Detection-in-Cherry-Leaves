@@ -1,4 +1,5 @@
 import streamlit as st
+import base64
 from PIL import Image
 import numpy as np
 import pandas as pd

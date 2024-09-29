@@ -59,6 +59,25 @@ To save time in this process, the IT team suggested an ML system that detects in
 * Training history: Accuracy and loss curves for both the training and validation sets were plotted to monitor the model's performance and ensure there was no overfitting.
 * Test set evaluation: The final model achieved an impressive accuracy of 99.76% on the test set, with a very low loss of 0.00435.
 
+## Bugs
+### 1. **Deployment on Heroku - Slug Size Exceeded**
+- **Issue**: During the deployment to Heroku, the project exceeded the 500MB slug size limit due to the inclusion of the machine learning model file (`mildew_model_v1.h5`), which was too large to be stored directly in the repository.
+- **Solution**: The solution was to upload the model externally (using [GitHub Releases](https://github.com/Lsverry/Mildew-Detection-in-Cherry-Leaves/releases)) and download it dynamically at runtime, reducing the slug size. Here’s how we addressed it:
+
+```python
+import requests
+
+model_url = 'https://github.com/Lsverry/Mildew-Detection-in-Cherry-Leaves/releases/download/mildew_model/mildew_model_v1.h5'
+model_path = 'outputs/v1/mildew_model_v1.h5'
+
+if not os.path.exists(model_path):
+    with requests.get(model_url, stream=True) as r:
+        r.raise_for_status()
+        with open(model_path, 'wb') as f:
+            for chunk in r.iter_content(chunk_size=8192):
+                f.write(chunk)
+```
+This code downloads the model when needed and saves it locally without adding it to the repository, keeping the repository size manageable.
 ## Unfixed Bugs
 
 - No significant errors were found.
@@ -78,7 +97,7 @@ The code is clean, follows the PEP8 guidelines, and is well-structured to ensure
 
 ### Heroku
 
-- The App live link is: `https://YOUR_APP_NAME.herokuapp.com/`
+- The App live link is: https://mildew-detection-cherry-leaves-a3f973f9a192.herokuapp.com/
 - Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
 - The project was deployed to Heroku using the following steps.
 
@@ -108,4 +127,6 @@ The code is clean, follows the PEP8 guidelines, and is well-structured to ensure
 
 ## Credits
 - [**Malaria Detector**](https://github.com/Code-Institute-Org/WalkthroughProject01): This project served as a foundational inspiration not only to structure and develop our project, but also to guide several key aspects of the implementation. We adapted and reused several blocks of code from the malaria detector project to meet project deadlines and ensure the successful delivery of the application.
+
+- **Model Loading Code**: The approach to downloading and loading the model dynamically from an external source was inspired by discussions on GitHub and Stack Overflow, one particular source of inspiration was the [Stack Overflow post](https://stackoverflow.com/questions/38511444/python-download-files-from-google-drive-using-url) on downloading large files from external links during application runtime.
 
